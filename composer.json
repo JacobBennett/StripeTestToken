@@ -1,0 +1,38 @@
+{
+    "name": "jacobbennett/stripe-test-token",
+    "description": "Quickly create Stripe test tokens for successful and exceptional Stripe responses.",
+    "homepage": "https://github.com/jacobbennett/stripe-test-token",
+    "license": "MIT",
+    "keywords": [
+        "stripe-test-token",
+        "stripe"
+    ],
+    "authors": [
+        {
+            "name": "Jacob Bennett",
+            "email": "me@jakebennett.net",
+            "homepage": "https://jakebennett.net",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "stripe/stripe-php": "^4.0",
+        "php": ">=5.3"
+    },
+    "require-dev": {
+        "phpunit/phpunit" : "^4.0|^5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "JacobBennett\\StripeTestToken\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JacobBennett\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    }
+}

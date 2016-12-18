@@ -1,0 +1,27 @@
+build:
+    tests:
+        override:
+            -
+                command: phpunit --coverage-clover=my-coverage-file
+                coverage:
+                    file: my-coverage-file
+                    format: php-clover
+
+checks:
+    php:
+        code_rating: true
+        duplication: true
+
+tools:
+    php_mess_detector: true
+    php_cs_fixer: true
+    sensiolabs_security_checker: true
+    php_cpd: true
+    php_loc: true
+    php_hhvm: true
+    php_code_sniffer: true
+    php_sim: true
+    php_changetracking: true
+    php_pdepend: true
+    php_analyzer: true
+

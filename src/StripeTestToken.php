@@ -1,6 +1,6 @@
 <?php
 
-namespace JacobBennett\StripeTestToken;
+namespace JacobBennett;
 
 use Stripe\Token;
 

@@ -17,12 +17,27 @@ composer require jacobbennett/stripe-test-token
 ```
 
 ## Usage
+```php
+<?php
 
-Call `StripeTestToken::validVisa()` to be returned a valid Stripe test token.
+// set your api key
+\Stripe\Stripe::setApiKey('your_stripe_secret_test_key');
+
+// get your token
+$token = \JacobBennett\StripeTestToken::validVisa();
+
+// fake a charge
+\Stripe\Charge::create([
+	'amount' => 500,
+	'curreny' => 'usd',
+	'source' => $token,
+]);
+
+```
 
 ## Testing
 
-Get a set of test Stripe credentials from [link to stripe here](http://google.com)
+Copy your [Stripe Credentials](https://dashboard.stripe.com/account/apikeys)
 
 
 ### License

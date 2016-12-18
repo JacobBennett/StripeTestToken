@@ -1,4 +1,4 @@
-![](https://raw.githubusercontent.com/jacobbennett/laravel-http2serverpush/master/server-push.png)
+![](https://raw.githubusercontent.com/JacobBennett/StripeTestToken/master/stripetesttoken-01.jpg)
 
 # Stripe Test Tokens
 

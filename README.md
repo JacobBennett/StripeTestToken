@@ -16,15 +16,18 @@ composer require jacobbennett/stripe-test-token
 \JacobBennett\StripeTestToken::setApiKey('your_stripe_secret_test_key');
 
 // Fake a Successful Charge
+
 \Stripe\Charge::create([
 	'amount' => 500,
 	'curreny' => 'usd',
 	'source' => \JacobBennett\StripeTestToken::validVisa(),
 ]);
 
+
+// Fake a Failing Charge
+
 try {
 
-	// Fake a Failing Charge
 	\Stripe\Charge::create([
 		'amount' => 500,
 		'curreny' => 'usd',

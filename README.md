@@ -1,12 +1,6 @@
+![](https://raw.githubusercontent.com/jacobbennett/laravel-http2serverpush/master/server-push.png)
+
 # Stripe Test Tokens
-
-TODO: 
-- scrutinizer
-- packagist images
-- badges
-- update readme
-
-## About
 
 Use this to quickly create Stripe test tokens for succesful and exceptional responses from Stripe.
 
@@ -42,6 +36,13 @@ try {
 }
 
 ```
+
+### ToDo
+
+- scrutinizer
+- packagist images
+- badges
+- update readme
 
 ### License
 

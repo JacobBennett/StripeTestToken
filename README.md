@@ -2,7 +2,7 @@
 
 # Stripe Test Tokens
 
-Use this to quickly create Stripe test tokens for succesful and exceptional responses from Stripe.
+Use this to quickly create Stripe test tokens for successful and exceptional responses from Stripe.
 
 ## Install
 ```bash

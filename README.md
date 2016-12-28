@@ -96,7 +96,6 @@ The following methods can be used to create tokens that produce specific respons
 ### ToDo
 
 - scrutinizer
-- packagist images
 - badges
 - update readme
 

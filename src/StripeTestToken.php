@@ -58,9 +58,12 @@ class StripeTestToken
     {
         return Token::create([
             'card' => [
-                'number'    => self::getCardNumber($type),
-                "exp_month" => 1,
-                "exp_year"  => date("Y") + 1,
+                'number'        => self::getCardNumber($type),
+                'exp_month'     => 1,
+                'exp_year'      => date("Y") + 1,
+                'address_line1' => '33 Zonda Lane',
+                'address_zip'   => '44883',
+                'cvc'           => '123',
             ]
         ], ['api_key' => self::$apiKey])->id;
     }

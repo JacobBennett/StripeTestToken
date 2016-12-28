@@ -13,14 +13,17 @@ composer require jacobbennett/stripe-test-token
 ```php
 <?php
 
-\JacobBennett\StripeTestToken::setApiKey('your_stripe_secret_test_key');
+use JacobBennett\StripeTestToken;
+use Stripe\Charge;
+
+StripeTestToken::setApiKey('your_stripe_secret_test_key');
 
 // Fake a Successful Charge
 
-\Stripe\Charge::create([
+Charge::create([
 	'amount' => 500,
 	'curreny' => 'usd',
-	'source' => \JacobBennett\StripeTestToken::validVisa(),
+	'source' => StripeTestToken::validVisa(),
 ]);
 
 
@@ -28,10 +31,10 @@ composer require jacobbennett/stripe-test-token
 
 try {
 
-	\Stripe\Charge::create([
+	Charge::create([
 		'amount' => 500,
 		'curreny' => 'usd',
-		'source' => \JacobBennett\StripeTestToken::cvcFail(),
+		'source' => StripeTestToken::cvcFail(),
 	]);
 
 } catch (\Stripe\Error\Card $e) {

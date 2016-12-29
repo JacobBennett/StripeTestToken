@@ -3,19 +3,17 @@
 namespace JacobBennett;
 
 use Stripe\Token;
+use Stripe\Stripe;
 
 /**
  * Quickly create Stripe test tokens
- * 
+ *
  * reference https://stripe.com/docs/testing#cards
  */
 class StripeTestToken
 {
 
-    private static $apiKey;
-
     const CARDS = [
-        
         // valid cards
         'validVisa'              => 4012888888881881,
         'validVisaDebit'         => 4000056655665556,
@@ -46,7 +44,7 @@ class StripeTestToken
 
     public static function setApiKey($key)
     {
-        self::$apiKey = $key;
+        Stripe::setApiKey($key);
     }
 
     public static function __callStatic($method, $args)
@@ -65,7 +63,7 @@ class StripeTestToken
                 'address_zip'   => '44883',
                 'cvc'           => '123',
             ]
-        ], ['api_key' => self::$apiKey])->id;
+        ])->id;
     }
 
     public static function getCardNumber($type)

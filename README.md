@@ -49,12 +49,13 @@ try {
 
 ### Using Methods
 
-To use any of the methods below, call the listed method as a static on the `StripeTestToken` class
+To use any of the methods below, call the listed method as a static on the `StripeTestToken` class. If you only want to return the corresponding card number, such as with Selenium or Laravel Dusk, you can call the same method on the `StripeCardNumber` class.
 
 ```php
 <?php 
 
-\JacobBennett\StripeTestToken::methodNameHere();
+\JacobBennett\StripeCardNumber::validVisa(); // Returns the valid Visa card number 4012888888881881
+\JacobBennett\StripeTestToken::validVisa(); // Attempts to generate a token against the Stripe API for a valid Visa card
 ```
 
 ### Testing

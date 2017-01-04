@@ -1,6 +1,9 @@
 ![](https://raw.githubusercontent.com/JacobBennett/StripeTestToken/master/stripetesttoken-01.jpg)
 
 # Stripe Test Tokens
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/jacobbennett/stripe-test-token.svg?maxAge=2592000?style=flat-square)](https://packagist.org/packages/jacobbennett/stripe-test-token)
+[![Travis](https://img.shields.io/travis/JacobBennett/StripeTestToken.svg?maxAge=2592000?style=flat-square)](https://travis-ci.org/JacobBennett/StripeTestToken)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE)
 
 Use this to quickly create Stripe test tokens for successful and exceptional responses from Stripe.
 
@@ -58,14 +61,6 @@ To use any of the methods below, call the listed method as a static on the `Stri
 \JacobBennett\StripeTestToken::validVisa(); // Attempts to generate a token against the Stripe API for a valid Visa card
 ```
 
-### Testing
-
-In order to run the full test suite, you must have `STRIPE_KEY` set in your environment, as the test will hit the Stripe API in order to generate a test token.
-
-```
-$ STRIPE_KEY=sk_test_YourTestKeyHere phpunit tests/
-```
-
 ### Test card numbers
 Genuine card information cannot be used in test mode. Instead, use any of the following test card methods to create a successful payment token:
 
@@ -102,12 +97,14 @@ The following methods can be used to create tokens that produce specific respons
 | declineProcessingError | Charge is declined with a `processing_error` code. |
 | declineIncorrectNumber | Charge is declined with an `incorrect_number` code as the card number fails the [Luhn check](https://en.wikipedia.org/wiki/Luhn_algorithm). |
 
-### ToDo
+## Testing
 
-- scrutinizer
-- badges
-- update readme
+In order to run the full test suite, you must have `STRIPE_KEY` set in your environment, as the test will hit the Stripe API in order to generate a test token.
 
-### License
+```
+$ STRIPE_KEY=sk_test_YourTestKeyHere phpunit tests/
+```
+
+## License
 
 This project is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

@@ -19,6 +19,9 @@
         "stripe/stripe-php": "^4.0",
         "php": ">=5.3"
     },
+    "require-dev": {
+        "phpunit/phpunit": "^4.8"
+    },
     "autoload": {
         "psr-4": {
             "JacobBennett\\": "src"

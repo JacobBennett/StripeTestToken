@@ -57,6 +57,14 @@ To use any of the methods below, call the listed method as a static on the `Stri
 \JacobBennett\StripeTestToken::methodNameHere();
 ```
 
+### Testing
+
+In order to run the full test suite, you must have `STRIPE_KEY` set in your environment, as the test will hit the Stripe API in order to generate a test token.
+
+```
+$ STRIPE_KEY=sk_test_YourTestKeyHere phpunit tests/
+```
+
 ### Test card numbers
 Genuine card information cannot be used in test mode. Instead, use any of the following test card methods to create a successful payment token:
 

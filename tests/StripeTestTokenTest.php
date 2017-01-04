@@ -21,10 +21,20 @@ class StripeTestTokenTest extends PHPUnit_Framework_TestCase
     /** @test */
     public function it_returns_a_token_id_for_a_valid_visa()
     {
-        $this->assertFalse(trim(getenv('STRIPE_KEY')) === '', 'You must set the STRIPE_KEY in phpunit.xml');
+        $this->assertFalse(trim(getenv('STRIPE_KEY')) === '', 'You must set the STRIPE_KEY in your environment');
 
         StripeTestToken::setApiKey(getenv('STRIPE_KEY'));
 
         $this->assertTrue(is_string(StripeTestToken::create('validVisa')));
+    }
+
+    /** @test */
+    public function it_returns_a_token_id_for_a_valid_mastercard_using_static_access()
+    {
+        $this->assertFalse(trim(getenv('STRIPE_KEY')) === '', 'You must set the STRIPE_KEY in your environment');
+
+        StripeTestToken::setApiKey(getenv('STRIPE_KEY'));
+
+        $this->assertTrue(is_string(StripeTestToken::validMastercard()));
     }
 }

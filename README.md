@@ -25,7 +25,7 @@ StripeTestToken::setApiKey('your_stripe_secret_test_key');
 
 Charge::create([
         'amount' => 500,
-        'curreny' => 'usd',
+        'currency' => 'usd',
         'source' => StripeTestToken::validVisa(),
 ]);
 
@@ -36,7 +36,7 @@ try {
 
         Charge::create([
                 'amount' => 500,
-                'curreny' => 'usd',
+                'currency' => 'usd',
                 'source' => StripeTestToken::cvcFail(),
         ]);
 

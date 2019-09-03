@@ -1,13 +1,15 @@
 <?php
 
 use JacobBennett\StripeCardNumber;
+use PHPUnit\Framework\TestCase;
 
-class StripeCardNumberTest extends PHPUnit_Framework_TestCase
+
+class StripeCardNumberTest extends TestCase
 {
     /** @test */
     public function it_throws_an_exception_for_an_invalid_method()
     {
-        $this->setExpectedException(\BadMethodCallException::class);
+        $this->expectException(\BadMethodCallException::class);
 
         StripeCardNumber::someInvalidCardMethod();
     }

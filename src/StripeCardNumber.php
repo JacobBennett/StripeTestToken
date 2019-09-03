@@ -37,6 +37,11 @@ class StripeCardNumber
         'declineExpiredCard'     => 4000000000000069,
         'declineProcessingError' => 4000000000000119,
         'declineIncorrectNumber' => 4242424242424241,
+
+        // SCA
+        'scaAuthOneTimePayments' => 4000002500003155,
+        'scaAuthRequired' => 4000002760003184,
+        'scaAuthOnSession' => 4000003800000446,
     ];
 
     public static function __callStatic($method, $args)

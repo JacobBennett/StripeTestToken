@@ -1,13 +1,15 @@
 <?php
 
 use JacobBennett\StripeCardNumber;
+use PHPUnit\Framework\TestCase;
 
-class StripeCardNumberTest extends PHPUnit_Framework_TestCase
+
+class StripeCardNumberTest extends TestCase
 {
     /** @test */
     public function it_throws_an_exception_for_an_invalid_method()
     {
-        $this->setExpectedException(\BadMethodCallException::class);
+        $this->expectException(\BadMethodCallException::class);
 
         StripeCardNumber::someInvalidCardMethod();
     }
@@ -148,5 +150,23 @@ class StripeCardNumberTest extends PHPUnit_Framework_TestCase
     public function it_returns_a_declined_incorrect_number()
     {
         $this->assertSame(4242424242424241, StripeCardNumber::declineIncorrectNumber());
+    }
+
+    /** @test */
+    public function it_returns_a_sca_one_time_payment_number()
+    {
+        $this->assertSame(4000002500003155, StripeCardNumber::scaAuthOneTimePayments());
+    }
+
+    /** @test */
+    public function it_returns_a_sca_auth_required_number()
+    {
+        $this->assertSame(4000002760003184, StripeCardNumber::scaAuthRequired());
+    }
+
+    /** @test */
+    public function it_returns_a_sca_auth_on_session_required_number()
+    {
+        $this->assertSame(4000003800000446, StripeCardNumber::scaAuthOnSession());
     }
 }

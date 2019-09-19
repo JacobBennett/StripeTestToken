@@ -1,13 +1,14 @@
 <?php
 
 use JacobBennett\StripeTestToken;
+use PHPUnit\Framework\TestCase;
 
-class StripeTestTokenTest extends PHPUnit_Framework_TestCase
+class StripeTestTokenTest extends TestCase
 {
     /** @test */
     public function it_throws_an_exception_when_requesting_a_non_existent_card_type()
     {
-        $this->setExpectedException(\BadMethodCallException::class);
+        $this->expectException(\BadMethodCallException::class);
 
         StripeTestToken::getCardNumber('someNonExistentCardType');
     }
@@ -15,7 +16,7 @@ class StripeTestTokenTest extends PHPUnit_Framework_TestCase
     /** @test */
     public function it_throws_an_exception_when_creating_a_token_with_a_non_existent_card_type_via_static_access()
     {
-        $this->setExpectedException(\BadMethodCallException::class);
+        $this->expectException(\BadMethodCallException::class);
 
         StripeTestToken::someNonExistentCardType();
     }

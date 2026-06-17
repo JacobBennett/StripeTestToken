@@ -8,8 +8,35 @@ use Stripe\Token;
 
 /**
  * Quickly create Stripe test tokens
+ * 
+ * @method static \Stripe\Token validVisa()
+ * @method static \Stripe\Token validVisaDebit()
+ * @method static \Stripe\Token validMastercard()
+ * @method static \Stripe\Token validMastercardDebit()
+ * @method static \Stripe\Token validMastercardPrepaid()
+ * @method static \Stripe\Token validAmex()
+ * @method static \Stripe\Token validDiscover()
+ * @method static \Stripe\Token validDinersClub()
+ * @method static \Stripe\Token validJCB()
+ * @method static \Stripe\Token successDirectToBalance()
+ * @method static \Stripe\Token addressZipFail()
+ * @method static \Stripe\Token addressFail()
+ * @method static \Stripe\Token zipFail()
+ * @method static \Stripe\Token addressZipUnavailable()
+ * @method static \Stripe\Token cvcFail()
+ * @method static \Stripe\Token customerChargeFail()
+ * @method static \Stripe\Token successWithReview()
+ * @method static \Stripe\Token declineCard()
+ * @method static \Stripe\Token declineFraudulentCard()
+ * @method static \Stripe\Token declineIncorrectCvc()
+ * @method static \Stripe\Token declineExpiredCard()
+ * @method static \Stripe\Token declineProcessingError()
+ * @method static \Stripe\Token declineIncorrectNumber()
+ * @method static \Stripe\Token scaAuthOneTimePayments()
+ * @method static \Stripe\Token scaAuthRequired()
+ * @method static \Stripe\Token scaAuthOnSession()
  *
- * reference https://stripe.com/docs/testing#cards
+ * @see https://stripe.com/docs/testing#cards
  */
 class StripeTestToken
 {

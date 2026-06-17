@@ -7,6 +7,35 @@ use BadMethodCallException;
 /**
  * Provide access to varying valid and exceptional card numbers
  * independently of having to actually create a Stripe token.
+ * 
+ * @method static int validVisa()
+ * @method static int validVisaDebit()
+ * @method static int validMastercard()
+ * @method static int validMastercardDebit()
+ * @method static int validMastercardPrepaid()
+ * @method static int validAmex()
+ * @method static int validDiscover()
+ * @method static int validDinersClub()
+ * @method static int validJCB()
+ * @method static int successDirectToBalance()
+ * @method static int addressZipFail()
+ * @method static int addressFail()
+ * @method static int zipFail()
+ * @method static int addressZipUnavailable()
+ * @method static int cvcFail()
+ * @method static int customerChargeFail()
+ * @method static int successWithReview()
+ * @method static int declineCard()
+ * @method static int declineFraudulentCard()
+ * @method static int declineIncorrectCvc()
+ * @method static int declineExpiredCard()
+ * @method static int declineProcessingError()
+ * @method static int declineIncorrectNumber()
+ * @method static int scaAuthOneTimePayments()
+ * @method static int scaAuthRequired()
+ * @method static int scaAuthOnSession()
+ * 
+ * @see https://stripe.com/docs/testing#cards
  */
 class StripeCardNumber
 {
@@ -40,8 +69,8 @@ class StripeCardNumber
 
         // SCA
         'scaAuthOneTimePayments' => 4000002500003155,
-        'scaAuthRequired' => 4000002760003184,
-        'scaAuthOnSession' => 4000003800000446,
+        'scaAuthRequired'        => 4000002760003184,
+        'scaAuthOnSession'       => 4000003800000446,
     ];
 
     public static function __callStatic($method, $args)
